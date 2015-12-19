@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+use Illuminate\Database\Capsule\Manager as Capsule;
 /*
 | -------------------------------------------------------------------
-| DATABASE CONNECTIVITY SETTINGS
+| DATABASE CONNECTIVITY SETTINGS FOR CORE CODEIGNITER
 | -------------------------------------------------------------------
 | This file will contain the settings needed to access your database.
 |
@@ -93,4 +93,23 @@ $db['default'] = array(
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE
-);
+	);
+
+/*
+| -------------------------------------------------------------------
+| DATABASE CONNECTIVITY SETTINGS FOR ELOQUENT ORM
+| -------------------------------------------------------------------
+*/
+$capsule = new Capsule;
+
+$capsule->addConnection([
+	'driver'    => 'mysqli',
+	'host'      => 'localhost',
+	'database'  => '',
+	'username'  => '',
+	'password'  => '',
+	'charset'   => 'utf8',
+	'collation' => 'utf8_unicode_ci',
+	'prefix'    => '',
+	]);
+$capsule->bootEloquent();
