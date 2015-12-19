@@ -93,4 +93,14 @@ class CI_Controller {
 		return self::$instance;
 	}
 
+	/**
+	 * json response for codigniter
+	 */
+	
+	public function json_response($output)
+	{
+		header('Content-type: application/json');
+		echo json_encode($output);
+	}
+
 }
