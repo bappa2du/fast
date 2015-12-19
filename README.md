@@ -8,11 +8,11 @@ A modified Codeigniter Framework (v 3.0.3) that has following supports
 ### Current Version
 1.0.0
 
-### Installation
-
-Ithe root directory just run:
-
+### Installation and Run Server
+-Requirement composer
 ```sh
+$ composer create-project bappa2du/fast <Your Project directory>
+$ cd <Your Project Directory>
 $ php -S localhost:8080
 ```
 -here 8080 is the port. You may change whatever you Like.
