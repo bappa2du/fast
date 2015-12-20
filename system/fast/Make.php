@@ -2,6 +2,8 @@
 
 class Make
 {
+    private $controller_path = FCPATH.'applicaion/controllers';
+    private $model_path = FCPATH.'applicaion/models';
     public function request($file_name, $type)
     {
         if (strpos($file_name, '/')) {
