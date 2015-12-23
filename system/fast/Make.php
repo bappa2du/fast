@@ -17,17 +17,17 @@ class Make
     {
         $namespace = 'App\\'.$type.'s';
         chdir(__DIR__."/../../application/".$type."s");
-        $file = $class . '.php';
+        $file = ucfirst($class) . '.php';
         if(file_exists($file)){
             echo "File Already Exists";
             exit;
         }
         fopen($file, 'w+');
-        $template = __DIR__ . '/'.$type.'.php';
+        $template = __DIR__ . '/'.$type.'.tpl';
         $template_date = fopen($template, 'r');
         $content = fread($template_date, filesize($template));
         $org_data = ["CLASS_NAME", "NAME_SPACE"];
-        $up_data = [$class, $namespace];
+        $up_data = [ucfirst($class), $namespace];
         $content = str_replace($org_data, $up_data, $content);
         str_replace('_class_name_', $class, $content);
         file_put_contents($file, $content);
@@ -52,17 +52,17 @@ class Make
             }
         }
         
-        $file = $class . '.php';
+        $file = ucfirst($class) . '.tpl';
         if(file_exists($file)){
             echo "File Already Exists\n\n";
             exit;
         }
         fopen($file, 'w+');
-        $template = __DIR__ . '/'.$type.'.php';
+        $template = __DIR__ . '/'.$type.'.tpl';
         $template_data = fopen($template, 'r');
         $content = fread($template_data, filesize($template));
         $org_data = ["CLASS_NAME", "NAME_SPACE"];
-        $up_data = [$class, $namespace];
+        $up_data = [ucfirst($class), $namespace];
         $content = str_replace($org_data, $up_data, $content);
         file_put_contents($file, $content);
         return $class;
