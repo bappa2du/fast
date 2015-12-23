@@ -2,8 +2,6 @@
 
 class Make
 {
-    private $controller_path = FCPATH.'applicaion/controllers';
-    private $model_path = FCPATH.'applicaion/models';
     public function request($file_name, $type)
     {
         if (strpos($file_name, '/')) {
@@ -17,7 +15,8 @@ class Make
 
     public function make_file($class,$type)
     {
-        $namespace = 'App\controllers';
+        $namespace = 'App\\'.$type.'s';
+        chdir(__DIR__."/../../application/".$type."s");
         $file = $class . '.php';
         if(file_exists($file)){
             echo "File Already Exists";
@@ -37,10 +36,11 @@ class Make
 
     public function make_tree_file($file_name,$type)
     {
-        $namespace = 'App\controllers';
+        $namespace = 'App\\'.$type.'s';
         $trees = explode('/', $file_name);
         $class = end($trees);
         array_pop($trees);
+        chdir(__DIR__."/../../application/".$type."s");
         foreach ($trees as $tree) {
             if (!file_exists($tree)) {
                 mkdir($tree, 07000);
@@ -51,6 +51,7 @@ class Make
                 $namespace .= "\\$tree";
             }
         }
+        
         $file = $class . '.php';
         if(file_exists($file)){
             echo "File Already Exists\n\n";
