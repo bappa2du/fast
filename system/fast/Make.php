@@ -43,7 +43,7 @@ class Make
         chdir(__DIR__."/../../application/".$type."s");
         foreach ($trees as $tree) {
             if (!file_exists($tree)) {
-                mkdir($tree, 07000);
+                mkdir($tree, 0777);
                 chdir($tree);
                 $namespace .= "\\$tree";
             }else{
@@ -52,7 +52,7 @@ class Make
             }
         }
         
-        $file = ucfirst($class) . '.tpl';
+        $file = ucfirst($class) . '.php';
         if(file_exists($file)){
             echo "File Already Exists\n\n";
             exit;

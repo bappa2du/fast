@@ -6,7 +6,7 @@ A modified Codeigniter Framework (v 3.0.3) that has following supports
 - Eloquent ORM added
 
 ### Current Version
-1.0.0
+1.3.0
 
 ### Installation and Run Server
 -Requirement composer
@@ -16,6 +16,12 @@ $ cd <Your Project Directory>
 $ php -S localhost:8080
 ```
 -here 8080 is the port. You may change whatever you Like.
+
+### Avaialable Generator
+```sh
+$ php fast -v //check the version
+$ php fast
+```
 
 License
 ----

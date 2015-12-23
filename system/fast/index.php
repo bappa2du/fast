@@ -20,16 +20,10 @@ if($argc > 2){
         }
     }else{
         echo "\nInvalid Argument\n";
-        echo "\n\n====== Available Command =========\n";
-        echo "php fast make:controller \t[controllername]\n";
-        echo "php fast make:model \t\t[modelname]\n";
-        echo "==================================\n\n";
+        echo "\n\n******* Available Command *************\n";
+        echo "php fast make:controller {controller_name}\n";
+        echo "php fast make:model {model_name}\n";
+        echo "***********************************\n\n";
         exit;
     }
-}else{
-    echo "\nNot Enough Arguments\n";
-    echo "\n====== Available Command =========\n";
-    echo "php fast make:controller \t[controllername]\n";
-    echo "php fast make:model \t\t[modelname]\n";
-    echo "==================================\n\n";
 }
