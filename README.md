@@ -6,7 +6,7 @@ A modified Codeigniter Framework (v 3.0.3) that has following supports
 - Eloquent ORM added
 
 ### Current Version
-1.0.0
+1.1.0
 
 ### Installation and Run Server
 -Requirement composer
