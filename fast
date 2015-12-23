@@ -10,6 +10,16 @@
 /**
  * At first check more than one one argument
  */
+if($argc == 1 && $argv[0]=='fast'){
+	echo "\n************************************\n";
+	echo "* Fast Framework Generator v 1.1.0 *\n";
+	echo "************************************\n\n";
+	echo "*********** Available Command **********\n";
+    echo "* php fast make:controller {controllername}\n";
+    echo "* php fast make:model {modelname}\n";
+    echo "*****************************************\n\n";
+    exit;
+}
 if($argc == 2 && $argv[0]=='fast' && $argv[1]=="-v"){
     echo "\nFast Framework Generator v 1.0.0\n\n";
     exit;
